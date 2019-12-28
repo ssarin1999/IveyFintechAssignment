@@ -4,4 +4,6 @@ npm install react-bootstrap bootstrap
 
 ## To Run
 ### Navigate to appropriate directory
-cd 
+cd ...
+### Run program
+npm start

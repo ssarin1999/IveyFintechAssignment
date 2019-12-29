@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Name from './Name';
+import DogCat from './DogCat';
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-function App() {
+  handleName(event) {
+    document.getElementsByClassName("Name")[0].style.display = "block";
+    document.getElementsByClassName("DogCat")[0].style.display = "none";
+  }
+
+  handleDogCat(event) {
+    document.getElementsByClassName("Name")[0].style.display = "none";
+    document.getElementsByClassName("DogCat")[0].style.display = "block";
+  }
+
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="App">
+      <div class = "nav">
+      <button class="showName" onClick={this.handleName}>Name Function</button>
+     <button class="showDogCat" onClick={this.handleDogCat}>Dog or Cat</button>
+     </div>
+    <div class="DogCat">
+    <DogCat/>
     </div>
+     <div class="Name">
+     <Name/>
+     </div>
+     
+     
+
+     </div>
   );
+  }
 }
 
 export default App;
